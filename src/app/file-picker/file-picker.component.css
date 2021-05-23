@@ -1,0 +1,11 @@
+input[type="file"] {
+    display: none;
+}
+.custom-file-browse {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background: #3f51b5;
+    color: white;
+}
