@@ -8,4 +8,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Build and run
 
-Run `ng build` to build the project. 
+Run `ng build` to build the project. If that command does not work, try to run `npm install` first and then try running the build command again.
