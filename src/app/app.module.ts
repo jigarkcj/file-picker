@@ -12,14 +12,27 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from '@angular/forms';
-import {MatProgressBarModule} from '@angular/material/progress-bar'; 
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { FileTreeViewComponent } from './file-tree-view/file-tree-view.component'; 
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FilePickerComponent
+    FilePickerComponent,
+    FileTreeViewComponent
+  ],
+  entryComponents: [
+    FileTreeViewComponent
   ],
   imports: [
+    MatRadioModule,
+    MatDialogModule,
+    MatTreeModule,
+    MatIconModule,
     MatProgressBarModule,
     FormsModule,
     MatSliderModule,
@@ -33,6 +46,10 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     BrowserAnimationsModule,
   ],
   exports: [
+    MatRadioModule,
+    MatDialogModule,
+    MatTreeModule,
+    MatIconModule,
     MatProgressBarModule,
     FormsModule,
     MatSliderModule,

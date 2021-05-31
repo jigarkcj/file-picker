@@ -6,19 +6,16 @@
                     <label>File: </label>
                     <mat-form-field appearance="fill" class="m-3">
                         <mat-label></mat-label>
-                        <input [(ngModel)]="filePath" value="{{filePath}}" matInput readonly>
+                        <input value="{{getFilePath()}}" matInput readonly>
                     </mat-form-field>
-                    <label for="browse" class="custom-file-browse">
-                        <i mat-raised-button color="primary"></i> Browse
-                    </label>
-                    <input type="file" (input)="onFileChange($event.target.value)" id="browse"
-                        class="browse-button text-primary"/>
+                    <button mat-raised-button color="primary" mat-button (click)="openDialog()">Browse</button>
                     <br />
                     <button mat-raised-button color="primary" (click)="addFile()"
                         [disabled]="!isFileSelected">Upload</button>
                     <br />
                     <mat-progress-bar *ngIf="isLoading" mode="indeterminate" class="mt-5"></mat-progress-bar>
-                    <mat-label *ngIf="isFileUploaded" class="mt-5">Upload complete!</mat-label>
+
+                    <mat-label *ngIf="message" class="mt-5">{{message}}</mat-label>
                 </mat-tab>
                 <mat-tab label="History Page">
                     <label class="mt-3" mat-raised-button color="primary">Uploaded files</label>
@@ -28,9 +25,10 @@
                         </li>
                     </ul>
                     <br />
-                    <button mat-raised-button color="primary" (click)="clearFiles()">Clear</button>
+                    <button [disabled]="!filesSaved" mat-raised-button color="primary" (click)="clearFiles()">Clear</button>
                 </mat-tab>
             </mat-tab-group>
         </div>
     </div>
 </div>
+

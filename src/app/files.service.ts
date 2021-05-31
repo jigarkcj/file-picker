@@ -6,6 +6,7 @@ import { Observable, of } from 'rxjs';
 })
 export class FilesService {
   filePaths = [];
+  filePath ="";
 
   constructor() { }
   
@@ -23,4 +24,12 @@ export class FilesService {
     return this.filePaths;
   }
 
+  addFilePath(filePath) {
+    this.filePath = filePath;
+  }
+
+  getFilePath(): string {
+    const filePath = this.filePath;
+    return filePath;
+  }
 }
